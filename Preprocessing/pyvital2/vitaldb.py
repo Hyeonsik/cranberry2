@@ -427,3 +427,18 @@ if __name__ == '__main__':
         '829134dd331e867598f17d81c1b31f5be85dddec'
     ], 60)
     print(vals)
+
+
+def vital_recs_time(ipath, dtnames, interval=1):
+    # 만일 SNUADC/ECG_II,Solar8000 형태의 문자열이면?
+    if isinstance(dtnames, str):
+        if dtnames.find(',') != -1:
+            dtnames = dtnames.split(',')
+        else:
+            dtnames = [dtnames]
+
+    vf = VitalFile(ipath, dtnames)
+    ret = []
+    for dtname in dtnames:
+        ret.append(((vf.get_samples(dtname, interval)),datetime.fromtimestamp(vf.dtstart)))
+    return np.transpose(ret)
