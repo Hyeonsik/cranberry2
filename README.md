@@ -1,7 +1,3 @@
-# cranberry ##################
-##############################
-##############################
-##############################
 
 # Repository Description 
 It is the docker container of nvidia server computer in the department of Anesthiology & pain medicine of SNUH. It is created based on the docker image from [nvidia cuda](https://hub.docker.com/r/nvidia/cuda/). Download appropriate version of the docker image considering your ubunutu version. For me, it was the [latest version](https://gitlab.com/nvidia/container-images/cuda/blob/master/dist/11.1/ubuntu18.04-x86_64/runtime/cudnn8/Dockerfile) in October, 2020 on ubuntu 18.04.
